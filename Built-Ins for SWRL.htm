@@ -1,0 +1,535 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0046)http://www.daml.org/2004/04/swrl/builtins.html -->
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+
+<title>Built-Ins for SWRL</title> 
+
+<link rel="stylesheet" type="text/css" href="./Built-Ins for SWRL_files/spec.css">
+<link rel="stylesheet" type="text/css" href="./Built-Ins for SWRL_files/spec.css">
+
+</head>
+
+<body>
+
+<div class="navbar">
+      <a href="http://www.daml.org/2004/04/swrl/usage.html">previous</a>
+&nbsp;<a href="http://www.daml.org/2004/04/swrl/#contents">next</a> 
+&nbsp;<a href="http://www.daml.org/2004/04/swrl/">top</a> 
+&nbsp;<a href="http://www.daml.org/2004/04/swrl/#contents">contents</a> 
+</div>
+<hr>
+
+<div class="head">
+
+<h1><a id="S8" name="S8"></a>
+SWRL<br>
+Section 8.  Built-Ins</h1>
+
+<hr>
+
+</div>
+
+<div class="subtoc">
+<h2><a id="contents" name="contents">Contents</a></h2>
+    <ul class="toc">
+    <li class="tocline2">8.1<a href="http://www.daml.org/2004/04/swrl/builtins.html#8.1">Built-Ins for Comparisons</a></li>
+    <li class="tocline2">8.2<a href="http://www.daml.org/2004/04/swrl/builtins.html#8.2">Math Built-Ins</a></li>
+    <li class="tocline2">8.3<a href="http://www.daml.org/2004/04/swrl/builtins.html#8.3">Built-Ins for Boolean Values</a></li>
+    <li class="tocline2">8.4<a href="http://www.daml.org/2004/04/swrl/builtins.html#8.4">Built-Ins for Strings</a></li>
+    <li class="tocline2">8.5<a href="http://www.daml.org/2004/04/swrl/builtins.html#8.5">Built-Ins for Date, Time and Duration</a></li>
+    <li class="tocline2">8.6<a href="http://www.daml.org/2004/04/swrl/builtins.html#8.6">Built-Ins for URIs</a></li>
+    <li class="tocline2">8.7<a href="http://www.daml.org/2004/04/swrl/builtins.html#8.7">Built-Ins for Lists</a></li>
+    </ul>
+<hr>
+
+</div>
+
+<h2><a name="8"></a>8. Built-Ins</h2>
+
+<p>
+The set of built-ins for SWRL is motivated by a modular approach that will
+allow further extensions in future releases within a (hierarchical) taxonomy. At the same time, it will provide the
+flexibility for various implementations to select the modules to be supported with each version of SWRL.
+</p>
+<p>
+SWRL's built-ins approach is also based on the reuse of existing built-ins in <a href="http://www.w3.org/TR/xquery/">XQuery</a> and <a href="http://www.w3.org/TR/xpath">XPath</a>,
+which are themselves based on <a href="http://www.w3.org/TR/xmlschema-2/">XML Schema Part 2:  Datatypes</a>.
+</p>
+<p>This system of built-ins should also help in the interoperation of SWRL with
+other Web formalisms by providing an extensible, modular built-ins infrastructure for 
+Semantic Web Languages, Web Services, and Web applications.
+</p>
+<p>
+SWRL built-ins are used in builtin atoms.
+For example,
+<a href="http://www.daml.org/2004/04/swrl/xmlsyntax.html#owls_builtinAtom">swrlx:builtinAtom</a>
+identifies a built-in using the swrlx:builtin attribute
+and lists its arguments as subelements.
+</p>
+<p>
+Swrl built-ins are identified using the 
+<a href="http://www.w3.org/2003/11/swrlb">http://www.w3.org/2003/11/swrlb</a>
+namespace.
+</p>
+
+<h3><a name="8.1"></a>8.1. Built-Ins for Comparisons</h3>
+<ul>
+<li>swrlb:equal
+<small>
+(from XQuery <a href="http://www.w3.org/TR/xpath-functions/#func-numeric-equal">op:numeric-equal</a>,
+             <a href="http://www.w3.org/TR/xpath-functions/#func-compare">op:compare</a>,
+             <a href="http://www.w3.org/TR/xpath-functions/#func-boolean-equal">op:boolean-equal</a>
+             <a href="http://www.w3.org/TR/xpath-functions/#func-yearMonthDuration-equal">op:yearMonthDuration-equal</a>,
+             <a href="http://www.w3.org/TR/xpath-functions/#func-dayTimeDuration-equal">op:dayTimeDuration-equal</a>,
+             <a href="http://www.w3.org/TR/xpath-functions/#func-dateTime-equal">op:dateTime-equal</a>,
+             <a href="http://www.w3.org/TR/xpath-functions/#func-date-equal">op:date-equal</a>,
+             <a href="http://www.w3.org/TR/xpath-functions/#func-time-equal">op:time-equal</a>,
+             <a href="http://www.w3.org/TR/xpath-functions/#func-gYearMonth-equal">op:gYearMonth-equal</a>,
+             <a href="http://www.w3.org/TR/xpath-functions/#func-gYear-equal">op:gYear-equal</a>,
+             <a href="http://www.w3.org/TR/xpath-functions/#func-gMonthDay-equal">op:gMonthDay-equal</a>,
+             <a href="http://www.w3.org/TR/xpath-functions/#func-gMonth-equal">op:gMonth-equal</a>,
+             <a href="http://www.w3.org/TR/xpath-functions/#func-gDay-equal">op:gDay-equal</a>,
+             <a href="http://www.w3.org/TR/xpath-functions/#func-anyURI-equal">op:anyURI-equal</a>)
+<br>
+Satisfied iff the first argument and the second argument are the same.
+</small><br><br></li>
+<li>swrlb:notEqual
+<small>
+(from swrlb:equal)
+<br>
+The negation of swrlb:equal.
+</small><br><br></li>
+<li>swrlb:lessThan
+<small>
+(from XQuery <a href="http://www.w3.org/TR/xpath-functions/#func-numeric-less-than">op:numeric-less-than</a>,
+             <a href="http://www.w3.org/TR/xpath-functions/#func-compare">op:compare</a>,
+             <a href="http://www.w3.org/TR/xpath-functions/#func-yearMonthDuration-less-than">op:yearMonthDuration-less-than</a>,
+             <a href="http://www.w3.org/TR/xpath-functions/#func-dayTimeDuration-less-than">op:dayTimeDuration-less-than</a>,
+             <a href="http://www.w3.org/TR/xpath-functions/#func-dateTime-less-than">op:dateTime-less-than</a>,
+             <a href="http://www.w3.org/TR/xpath-functions/#func-date-less-than">op:date-less-than</a>,
+             <a href="http://www.w3.org/TR/xpath-functions/#func-time-less-than">op:time-less-than</a>)
+<br>
+Satisfied iff the first argument and the second argument are both in some implemented
+type and the first argument is less than the second argument according to
+a type-specific ordering (partial or total), if there is one defined for the 
+type.  
+The ordering function for the type of untyped literals is the partial order
+defined as string ordering when the language tags are the same (or both
+missing) and incomparable otherwise.
+</small><br><br></li>
+<li>swrlb:lessThanOrEqual
+<small>
+(from swrlb:lessThan, swrlb:equal)
+<br>
+Either less than, as above, or equal, as above.
+</small><br><br></li>
+<li>swrlb:greaterThan
+<small>
+(from XQuery <a href="http://www.w3.org/TR/xpath-functions/#func-numeric-greater-than">op:numeric-greater-than</a>,
+             <a href="http://www.w3.org/TR/xpath-functions/#func-compare">op:compare</a>,
+             <a href="http://www.w3.org/TR/xpath-functions/#func-yearMonthDuration-greater-than">op:yearMonthDuration-greater-than</a>,
+             <a href="http://www.w3.org/TR/xpath-functions/#func-dayTimeDuration-greater-than">op:dayTimeDuration-greater-than</a>,
+             <a href="http://www.w3.org/TR/xpath-functions/#func-dateTime-greater-than">op:dateTime-greater-than</a>,
+             <a href="http://www.w3.org/TR/xpath-functions/#func-date-greater-than">op:date-greater-than</a>,
+             <a href="http://www.w3.org/TR/xpath-functions/#func-time-greater-than">op:time-greater-than</a>)
+<br>
+Similarly to swrlb:lessThan.
+</small><br><br></li>
+<li>swrlb:greaterThanOrEqual
+<small>
+(from swrlb:greaterThan, swrlb:equal)
+<br>
+Similarly to swrlb:lessThanOrEqual.
+</small><br><br></li>
+</ul>
+
+<h3><a name="8.2"></a>8.2. Math Built-Ins</h3>
+
+<p>
+The following built-ins are defined for various numeric types.
+For the relation to be satisfied the arguments all have to belong to some
+numeric type for which the relation is defined.
+</p>
+
+<ul>
+<li>swrlb:add
+<small>
+(from XQuery <a href="http://www.w3.org/TR/xpath-functions/#func-numeric-add">op:numeric-add</a>)
+<br>
+Satisfied iff the first argument is equal to the arithmetic sum of the second argument through the last argument.</small><br><br></li>
+<li>swrlb:subtract
+<small>
+(from XQuery <a href="http://www.w3.org/TR/xpath-functions/#func-numeric-subtract">op:numeric-subtract</a>)
+<br>
+Satisfied iff the first argument is equal to the arithmetic difference of the second argument minus the third argument.</small><br><br></li>
+<li>swrlb:multiply
+<small>
+(from XQuery <a href="http://www.w3.org/TR/xpath-functions/#func-numeric-multiply">op:numeric-multiply</a>)
+<br>
+Satisfied iff the first argument is equal to the arithmetic product of the second argument through the last argument.</small><br><br></li>
+<li>swrlb:divide
+<small>
+(from XQuery <a href="http://www.w3.org/TR/xpath-functions/#func-numeric-divide">op:numeric-divide</a>)
+<br>Satisfied iff the first argument is equal to the arithmetic quotient of the second argument divided by the third argument.</small><br><br></li>
+<li>swrlb:integerDivide
+<small>
+(from XQuery <a href="http://www.w3.org/TR/xpath-functions/#func-numeric-integer-divide">op:numeric-integer-divide</a>)
+<br>
+Satisfied if the first argument is the arithmetic quotient of the second argument idiv the third argument. If the numerator is not evenly divided by the divisor, then the quotient is the xsd:integer value obtained, ignoring any remainder that results from the division (that is, no rounding is performed).</small><br><br></li>
+<li>swrlb:mod
+<small>
+(from XQuery <a href="http://www.w3.org/TR/xpath-functions/#func-numeric-mod">op:numeric-mod</a>)
+<br>Satisfied if the first argument represents the remainder resulting from dividing the second argument, the dividend, by the third argument, the divisor. The operation a mod b for operands that are xsd:integer or xsd:decimal, or types derived from them, produces a result such that (a idiv b)*b+(a mod b) is equal to a and the magnitude of the result is always less than the magnitude of b. This identity holds even in the special case that the dividend is the negative integer of largest possible magnitude for its type and the divisor is -1 (the remainder is 0). It follows from this rule that the sign of the result is the sign of the dividend</small><br><br></li>
+<li>swrlb:pow<br><small>Satisfied iff the first argument is equal to the result of the second argument raised to the third argument power.</small><br><br></li>  
+<li>swrlb:unaryPlus
+<small>
+(from XQuery <a href="http://www.w3.org/TR/xpath-functions/#func-numeric-unary-plus">op:numeric-unary-plus</a>)
+<br>Satisfied iff the first argument is equal to the second argument with its sign unchanged.</small><br><br></li>
+<li>swrlb:unaryMinus
+<small>
+(from XQuery <a href="http://www.w3.org/TR/xpath-functions/#func-numeric-unary-minus">op:numeric-unary-minus</a>)
+<br>Satisfied iff the first argument is equal to the second argument with its sign reversed.</small><br><br></li>
+   <li>swrlb:abs
+<small>
+(from XQuery <a href="http://www.w3.org/TR/xpath-functions/#func-abs">fn:abs</a>)
+<br>Satisfied iff the first argument is the absolute value of the second argument.</small><br><br></li>
+   <li>swrlb:ceiling
+<small>
+(from XQuery <a href="http://www.w3.org/TR/xpath-functions/#func-ceiling">fn:ceiling</a>)
+<br>Satisfied iff the first argument is the smallest number with no fractional part that is greater than or equal to the second argument.</small><br><br></li>
+   <li>swrlb:floor
+<small>
+(from XQuery <a href="http://www.w3.org/TR/xpath-functions/#func-floor">fn:floor</a>)
+<br>Satisfied iff the first argument is the largest number with no fractional part that is less than or equal to the second argument.</small><br><br></li>
+   <li>swrlb:round
+<small>
+(from XQuery <a href="http://www.w3.org/TR/xpath-functions/#func-round">fn:round</a>)
+<br>Satisfied iff the first argument is equal to the nearest number to the second argument with no fractional part.</small><br><br></li>
+   <li>swrlb:roundHalfToEven
+<small>
+(from XQuery <a href="http://www.w3.org/TR/xpath-functions/#func-round-half-to-even">fn:round-half-to-even</a>)
+<br>Satisfied iff the first argument is equal to the second argument rounded to the given precision. If the fractional part is exactly half, the result is the number whose least significant digit is even.</small><br><br></li>
+   <li>swrlb:sin<br><small>Satisfied iff the first argument is equal to the sine of the radian value the second argument.</small><br><br></li>
+   <li>swrlb:cos<br><small>Satisfied iff the first argument is equal to the cosine of the radian value the second argument.</small><br><br></li>
+   <li>swrlb:tan<br><small>Satisfied iff the first argument is equal to the tangent of the radian value the second argument.</small><br><br></li>
+</ul>
+
+<h3><a name="8.3"></a>8.3. Built-Ins for Boolean Values</h3>
+<ul>
+   <li>swrlb:booleanNot
+<small>
+(from XQuery <a href="http://www.w3.org/TR/xpath-functions/#func-not">fn:not</a>)<br>
+Satisfied iff the first argument is true and the second argument is false, or vice versa.</small></li>
+</ul>
+
+<h3><a name="8.4"></a>8.4. Built-Ins for Strings</h3>
+
+<p>
+The following built-ins are defined for strings (only), i.e., not untyped
+literals with language tags.
+</p>
+
+<ul>
+   <li>swrlb:stringEqualIgnoreCase<br><small>Satisfied iff the first argument is the same as the second argument (upper/lower case ignored)</small><br><br></li>
+   <li>swrlb:stringConcat
+<small>
+(from XQuery <a href="http://www.w3.org/TR/xpath-functions/#func-concat">fn:concat</a>)
+<br>Satisfied iff the first argument is equal to the string resulting from the concatenation of the strings the second argument through the last argument.</small><br><br></li>
+   <li>swrlb:substring
+<small>
+(from XQuery <a href="http://www.w3.org/TR/xpath-functions/#func-substring">fn:substring</a>)
+<br>Satisfied iff the first argument is equal to the substring of optional length the fourth argument starting at character offset the third argument in the string the second argument.</small><br><br></li>
+   <li>swrlb:stringLength
+<small>
+(from XQuery <a href="http://www.w3.org/TR/xpath-functions/#func-string-length">fn:string-length</a>)
+<br>Satisfied iff the first argument is equal to the length of the second argument.</small><br><br></li>
+   <li>swrlb:normalizeSpace
+<small>
+(from XQuery <a href="http://www.w3.org/TR/xpath-functions/#func-normalize-space">fn:normalize-space</a>)
+<br>Satisfied iff the first argument is equal to the whitespace-normalized value of the second argument.</small><br><br></li>
+   <li>swrlb:upperCase
+<small>
+(from XQuery <a href="http://www.w3.org/TR/xpath-functions/#func-upper-case">fn:upper-case</a>)
+<br>Satisfied iff the first argument is equal to the upper-cased value of the second argument.</small><br><br></li>
+   <li>swrlb:lowerCase
+<small>
+(from XQuery <a href="http://www.w3.org/TR/xpath-functions/#func-lower-case">fn:lower-case</a>)
+<br>Satisfied iff the first argument is equal to the lower-cased value of the second argument.</small><br><br></li>
+   <li>swrlb:translate
+<small>
+(from XQuery <a href="http://www.w3.org/TR/xpath-functions/#func-translate">fn:translate</a>)
+<br>Satisfied iff the first argument is equal to the second argument with occurrences of characters contained in the third argument replaced by the character at the corresponding position in the string the fourth argument.</small><br><br></li>
+   <li>swrlb:contains
+<small>
+(from XQuery <a href="http://www.w3.org/TR/xpath-functions/#func-contains">fn:contains</a>)
+<br>Satisfied iff the first argument contains the second argument (case sensitive).</small><br><br></li>
+   <li>swrlb:containsIgnoreCase<br><small>Satisfied iff the first argument contains the second argument (case ignored).</small><br><br></li>
+   <li>swrlb:startsWith
+<small>
+(from XQuery <a href="http://www.w3.org/TR/xpath-functions/#func-starts-with">fn:starts-with</a>)
+<br>Satisfied iff the first argument starts with the second argument.</small><br><br></li>
+   <li>swrlb:endsWith
+<small>
+(from XQuery <a href="http://www.w3.org/TR/xpath-functions/#func-ends-with">fn:ends-with</a>)
+<br>Satisfied iff the first argument ends with the second argument.</small><br><br></li>
+   <li>swrlb:substringBefore
+<small>
+(from XQuery <a href="http://www.w3.org/TR/xpath-functions/#func-substring-before">fn:substring-before</a>)
+<br>Satisfied iff the first argument is the characters of the second argument that precede the characters of the third argument.</small><br><br></li>
+   <li>swrlb:substringAfter
+<small>
+(from XQuery <a href="http://www.w3.org/TR/xpath-functions/#func-substring-after">fn:substring-after</a>)
+<br>Satisfied iff the first argument is the characters of the second argument that follow the characters of the third argument.</small><br><br></li>
+   <li>swrlb:matches
+<small>
+(from XQuery <a href="http://www.w3.org/TR/xpath-functions/#func-matches">fn:matches</a>)
+<br>Satisfied iff the first argument matches the <a href="http://www.w3.org/TR/xpath-functions/#regex-syntax">regular expression</a> the second argument.</small><br><br></li>
+   <li>swrlb:replace
+<small>
+(from XQuery <a href="http://www.w3.org/TR/xpath-functions/#func-replace">fn:replace</a>)
+<br>Satisfied iff the first argument is equal to the value of the second argument with every substring matched by the <a href="http://www.w3.org/TR/xpath-functions/#regex-syntax">regular expression</a> the third argument replaced by the replacement string the fourth argument.</small><br><br></li>
+   <li>swrlb:tokenize
+<small>
+(from XQuery <a href="http://www.w3.org/TR/xpath-functions/#func-tokenize">fn:tokenize</a>)
+<br>Satisfied iff the first argument is a sequence of one or more strings whose values are substrings of the second argument separated by substrings that match the <a href="http://www.w3.org/TR/xpath-functions/#regex-syntax">regular expression</a> the third argument.</small><br><br></li>
+</ul>
+
+
+<h3><a name="8.5"></a>8.5. Built-Ins for Date, Time and Duration</h3>
+
+<p>
+The following built-ins are defined for <a href="http://www.w3.org/TR/xmlschema-2/">the XML Schema date, time, and
+duration datatypes</a>, only, as appropriate.
+</p>
+
+<ul>
+   <li>swrlb:yearMonthDuration
+     <small>
+     (from XQuery <a href="http://www.w3.org/TR/xpath-functions/#dt-yearMonthDuration">xdt:yearMonthDuration</a>)
+     <br>
+     Satisfied iff the first argument is the xsd:duration representation consisting 
+     of the year the second argument and month the third argument.</small><br><br></li>
+   <li>swrlb:dayTimeDuration
+     <small>
+     (from XQuery <a href="http://www.w3.org/TR/xpath-functions/#dt-dayTimeDuration">xdt:dayTimeDuration</a>)
+     <br>
+     Satisfied iff the first argument is the xsd:duration representation consisting
+     of the days the second argument, hours the third argument, minutes the fourth argument, and seconds the fifth argument.</small><br><br></li>
+   <li>swrlb:dateTime
+     <small>
+     <br>
+     Satisfied iff the first argument is the xsd:dateTime representation consisting
+     of the year the second argument, month the third argument, day the fourth argument, hours the fifth argument, minutes the sixth argument, seconds the seventh argument, and timezone the eighth argument.</small><br><br></li>
+   <li>swrlb:date
+     <small>
+     <br>
+     Satisfied iff the first argument is the xsd:date representation consisting
+     of the year the second argument, month the third argument, day the fourth argument, and timezone the fifth argument.</small><br><br></li>
+   <li>swrlb:time
+     <small>
+     <br>
+     Satisfied iff the first argument is the xsd:time representation consisting
+     of the hours the second argument, minutes the third argument, seconds the fourth argument, and timezone the fifth argument.</small><br><br></li>
+   <li>swrlb:addYearMonthDurations
+       <small>
+       (from XQuery <a href="http://www.w3.org/TR/xpath-functions/#func-add-yearMonthDurations">op:add-yearMonthDurations</a>)
+       <br>
+       Satisfied iff the yearMonthDuration the first argument is equal to the arithmetic sum of the yearMonthDuration the second argument through the yearMonthDuration the last argument.</small><br><br></li>
+   <li>swrlb:subtractYearMonthDurations
+       <small>
+       (from XQuery <a href="http://www.w3.org/TR/xpath-functions/#func-subtract-yearMonthDurations">op:subtract-yearMonthDurations</a>)
+       <br>
+       Satisfied iff the yearMonthDuration the first argument is equal to the arithmetic difference of the yearMonthDuration the second argument minus the yearMonthDuration the third argument.
+       </small><br><br></li>
+   <li>swrlb:multiplyYearMonthDuration
+       <small>
+       (from XQuery <a href="http://www.w3.org/TR/xpath-functions/#func-multiply-yearMonthDuration">op:multiply-yearMonthDuration</a>)
+       <br>
+       Satisfied iff the yearMonthDuration the first argument is equal to the arithmetic product of the yearMonthDuration the second argument multiplied by the third argument.
+       </small><br><br></li>
+   <li>swrlb:divideYearMonthDurations
+       <small>
+       (from XQuery <a href="http://www.w3.org/TR/xpath-functions/#func-divide-yearMonthDuration">op:divide-yearMonthDuration</a>)
+       <br>
+       Satisfied iff the yearMonthDuration the first argument is equal to the arithmetic remainder of the yearMonthDuration the second argument divided by the third argument.
+       </small><br><br></li>
+   <li>swrlb:addDayTimeDurations
+       <small>
+       (from XQuery <a href="http://www.w3.org/TR/xpath-functions/#func-add-dayTimeDurations">op:add-dayTimeDurations</a>)
+       <br>
+       Satisfied iff the dayTimeDuration the first argument is equal to the arithmetic sum of the dayTimeDuration the second argument through the dayTimeDuration the last argument.
+       </small><br><br></li>
+   <li>swrlb:subtractDayTimeDurations
+       <small>
+       (from XQuery <a href="http://www.w3.org/TR/xpath-functions/#func-subtract-dayTimeDurations">op:subtract-dayTimeDurations</a>)
+       <br>
+       Satisfied iff the dayTimeDuration the first argument is equal to the arithmetic difference of the dayTimeDuration the second argument minus the dayTimeDuration the third argument.
+       </small><br><br></li>
+   <li>swrlb:multiplyDayTimeDurations
+       <small>
+       (from XQuery <a href="http://www.w3.org/TR/xpath-functions/#func-multiply-dayTimeDuration">op:multiply-dayTimeDuration</a>)
+       <br>
+       Satisfied iff the dayTimeDuration the first argument is equal to the arithmetic product of the dayTimeDuration the second argument multiplied by the third argument.
+       </small><br><br></li>
+   <li>swrlb:divideDayTimeDuration
+       <small>
+       (from XQuery <a href="http://www.w3.org/TR/xpath-functions/#func-divide-dayTimeDuration">op:divide-dayTimeDuration</a>)
+       <br>
+       Satisfied iff the dayTimeDuration the first argument is equal to the arithmetic remainder of the dayTimeDuration the second argument divided by the third argument.
+       </small><br><br></li>
+   <li>swrlb:subtractDates
+       <small>
+       (from XQuery <a href="http://www.w3.org/TR/xpath-functions/#func-subtract-dates">op:subtract-dates</a>)
+       <br>
+       Satisfied iff the dayTimeDuration the first argument is equal to the arithmetic difference of the xsd:date the second argument minus the xsd:date the third argument.
+       </small><br><br></li>
+   <li>swrlb:subtractTimes
+       <small>
+       (from XQuery <a href="http://www.w3.org/TR/xpath-functions/#func-subtract-times">op:subtract-times</a>)
+       <br>
+       Satisfied iff the dayTimeDuration the first argument is equal to the arithmetic difference of the xsd:time the second argument minus the xsd:time the third argument.
+       </small><br><br></li>
+   <li>swrlb:addYearMonthDurationToDateTime
+       <small>
+       (from XQuery <a href="http://www.w3.org/TR/xpath-functions/#func-add-yearMonthDuration-to-dateTime">op:add-yearMonthDuration-to-dateTime</a>)
+       <br>
+       Satisfied iff the xsd:dateTime the first argument is equal to the arithmetic sum of the xsd:dateTime the second argument plus the yearMonthDuration the third argument.
+       </small><br><br></li>
+   <li>swrlb:addDayTimeDurationToDateTime
+       <small>
+       (from XQuery <a href="http://www.w3.org/TR/xpath-functions/#func-add-dayTimeDuration-to-dateTime">op:add-dayTimeDuration-to-dateTime</a>)
+       <br>
+       Satisfied iff the xsd:dateTime the first argument is equal to the arithmetic sum of the xsd:dateTime the second argument plus the dayTimeDuration the third argument.
+       </small><br><br></li>
+   <li>swrlb:subtractYearMonthDurationFromDateTime
+       <small>
+       (from XQuery <a href="http://www.w3.org/TR/xpath-functions/#func-subtract-yearMonthDuration-from-dateTime">op:subtract-yearMonthDuration-from-dateTime</a>)
+       <br>
+       Satisfied iff the xsd:dateTime the first argument is equal to the arithmetic difference of the xsd:dateTime the second argument minus the yearMonthDuration the third argument.
+       </small><br><br></li>
+   <li>swrlb:subtractDayTimeDurationFromDateTime
+       <small>
+       (from XQuery <a href="http://www.w3.org/TR/xpath-functions/#func-subtract-dayTimeDuration-from-dateTime">op:subtract-dayTimeDuration-from-dateTime</a>)
+       <br>
+       Satisfied iff the xsd:dateTime the first argument is equal to the arithmetic difference of the xsd:dateTime the second argument minus the dayTimeDuration the third argument.
+       </small><br><br></li>
+   <li>swrlb:addYearMonthDurationToDate
+       <small>
+       (from XQuery <a href="http://www.w3.org/TR/xpath-functions/#func-add-yearMonthDuration-to-date">op:add-yearMonthDuration-to-date</a>)
+       <br>
+       Satisfied iff the xsd:date the first argument is equal to the arithmetic sum of the xsd:date the second argument plus the yearMonthDuration the third argument.
+       </small><br><br></li>
+   <li>swrlb:addDayTimeDurationToDate
+       <small>
+       (from XQuery <a href="http://www.w3.org/TR/xpath-functions/#func-add-dayTimeDuration-to-date">op:add-dayTimeDuration-to-date</a>)
+       <br>
+       Satisfied iff the xsd:date the first argument is equal to the arithmetic sum of the xsd:date the second argument plus the dayTimeDuration the third argument.
+       </small><br><br></li>
+   <li>swrlb:subtractYearMonthDurationFromDate
+       <small>
+       (from XQuery <a href="http://www.w3.org/TR/xpath-functions/#func-subtract-yearMonthDuration-from-date">op:subtract-yearMonthDuration-from-date</a>)
+       <br>
+       Satisfied iff the xsd:date the first argument is equal to the arithmetic difference of the xsd:date the second argument minus the yearMonthDuration the third argument.
+       </small><br><br></li>
+   <li>swrlb:subtractDayTimeDurationFromDate
+       <small>
+       (from XQuery <a href="http://www.w3.org/TR/xpath-functions/#func-subtract-dayTimeDuration-from-date">op:subtract-dayTimeDuration-from-date</a>)
+       <br>
+       Satisfied iff the xsd:date the first argument is equal to the arithmetic difference of the xsd:date the second argument minus the yearMonthDuration the third argument.
+       </small><br><br></li>
+   <li>swrlb:addDayTimeDurationToTime
+       <small>
+       (from XQuery <a href="http://www.w3.org/TR/xpath-functions/#func-add-dayTimeDuration-to-time">op:add-dayTimeDuration-to-time</a>)
+       <br>
+       Satisfied iff the xsd:time the first argument is equal to the arithmetic sum of the xsd:time the second argument plus the dayTimeDuration the third argument.
+       </small><br><br></li>
+   <li>swrlb:subtractDayTimeDurationFromTime
+       <small>
+       (from XQuery <a href="http://www.w3.org/TR/xpath-functions/#func-subtract-dayTimeDuration-from-time">op:subtract-dayTimeDuration-from-time</a>)
+       <br>
+       Satisfied iff the xsd:time the first argument is equal to the arithmetic difference of the xsd:time the second argument minus the dayTimeDuration the third argument.
+       </small><br><br></li>
+   <li>swrlb:subtractDateTimesYieldingYearMonthDuration
+       <small>
+       (from XQuery <a href="http://www.w3.org/TR/xpath-functions/#func-subtract-dateTimes-yielding-yearMonthDuration">fn:subtract-dateTimes-yielding-yearMonthDuration</a>)
+       <br>
+       Satisfied iff the yearMonthDuration the first argument is equal to the arithmetic difference of the xsd:dateTime the second argument minus the xsd:dateTime the third argument.
+       </small><br><br></li>
+   <li>swrlb:subtractDateTimesYieldingDayTimeDuration
+       <small>
+       (from XQuery <a href="http://www.w3.org/TR/xpath-functions/#func-subtract-dateTimes-yielding-dayTimeDuration">fn:subtract-dateTimes-yielding-dayTimeDuration</a>)
+       <br>
+       Satisfied iff the dayTimeDuration the first argument is equal to the arithmetic difference of the xsd:dateTime the second argument minus the xsd:dateTime the third argument.
+       </small><br><br></li>
+</ul>
+
+<h3><a name="8.6"></a>8.6. Built-Ins for URIs</h3>
+
+<p>
+The following built-ins are defined for the XML Schema datatypes related to
+URIs.
+</p>
+
+<ul>
+   <li>swrlb:resolveURI
+<small>
+(from XQuery <a href="http://www.w3.org/TR/xpath-functions/#func-resolve-uri">op:resolve-uri</a>)
+<br>Satisfied iff the URI reference the first argument is equal to the value of the URI reference the second argument resolved relative to the base URI the third argument.</small><br><br></li>
+   <li>swrlb:anyURI
+     <small>
+     <br>
+     Satisfied iff the first argument is a URI reference consisting of the 
+     scheme the second argument, 
+     host the third argument, 
+     port the fourth argument, 
+     path the fifth argument, 
+     query the sixth argument, and 
+     fragment the seventh argument.</small><br><br></li>
+</ul>
+
+<h3><a name="8.7"></a>8.7. Built-Ins for Lists</h3>
+
+<p>
+The following built-ins are defined for RDF-style lists.
+(Note that these built-ins are not usable in OWL DL or OWL Lite as
+RDF-style lists can only be used as OWL data in OWL Full.)
+</p>
+
+<ul>
+   <li>swrlb:listConcat<small>
+       (from <a href="http://www-2.cs.cmu.edu/Groups/AI/html/cltl/clm/node149.html">Common Lisp append</a>)
+       <br>Satisfied iff the first argument is a list representing the concatenation of the lists the second argument through the last argument.</small><br><br></li>
+   <li>swrlb:listIntersection<br><small>Satisfied iff the first argument is a list containing elements found in both the list the second argument and the list the third argument.</small><br><br></li>
+   <li>swrlb:listSubtraction<br><small>Satisfied iff the first argument is a list containing the elements of the list the second argument that are not members of the list the third argument.</small><br><br></li>
+   <li>swrlb:member<br><small>Satisfied iff the first argument is a member of the list the second argument.</small><br><br></li>
+   <li>swrlb:length<small>
+       (from <a href="http://www-2.cs.cmu.edu/Groups/AI/html/cltl/clm/node149.html">Common Lisp list-length</a>)
+       <br>Satisfied iff the first argument is the length of the list the second argument (number of members of the list).</small><br><br></li>
+   <li>swrlb:first<small>
+       (from <a href="http://www.w3.org/TR/2004/REC-rdf-schema-20040210/#ch_first">rdf:first</a>)
+       <br>Satisfied iff the first argument is the first member of the list the second argument.</small><br><br></li>
+   <li>swrlb:rest<small>
+       (from <a href="http://www.w3.org/TR/2004/REC-rdf-schema-20040210/#ch_rest">rdf:rest</a>)
+       <br>Satisfied iff the first argument is a list containing all members of the list the second argument except the first member (the head).</small><br><br></li>
+   <li>swrlb:sublist<br><small>Satisfied iff the list the first argument contains the list the second argument.</small><br><br></li>
+   <li>swrlb:empty<small>
+       (from <a href="http://www.w3.org/TR/2004/REC-rdf-schema-20040210/#ch_nil">rdf:nil</a>)
+       <br>Satisfied iff the list the first argument is an empty list.</small><br><br></li>
+</ul>
+
+<hr>
+
+
+<!-- bottom navigation bar -->
+<div class="navbar">
+      <a href="http://www.daml.org/2004/04/swrl/xmlsyntax.html">previous</a>
+&nbsp;<a href="http://www.daml.org/2004/04/swrl/#contents">next</a>
+&nbsp;<a href="http://www.daml.org/2004/04/swrl/">top</a> 
+&nbsp;<a href="http://www.daml.org/2004/04/swrl/#contents">contents</a> 
+</div>
+
+
+
+
+</body></html>
