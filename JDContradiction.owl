@@ -1,0 +1,268 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns="http://www.workingontologist.com/Examples/Chapter10/JDContradiction.owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xml:base="http://www.workingontologist.com/Examples/Chapter10/JDContradiction.owl">
+  <owl:Ontology rdf:about="http://www.workingontologist.com/Examples/Chapter10/JamesDean.owl">
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Created with TopBraid Composer</owl:versionInfo>
+  </owl:Ontology>
+  <owl:Class rdf:ID="FewMovieOwner">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <owl:Class rdf:ID="MovieFan"/>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="ownsMovie"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >3</owl:maxCardinality>
+      </owl:Restriction>
+    </owl:intersectionOf>
+    <owl:complementOf>
+      <owl:Class rdf:ID="NotFewMovieOwner"/>
+    </owl:complementOf>
+  </owl:Class>
+  <owl:Class rdf:ID="JudiDenchMovie">
+    <owl:disjointWith>
+      <owl:Class rdf:ID="TomCruiseMovie"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="JudyGarlandMovie"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Movie"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Judi dench movie</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="SpikeLeeMovie">
+    <owl:disjointWith>
+      <owl:Class rdf:ID="JamesDeanMovie"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf rdf:resource="#Movie"/>
+  </owl:Class>
+  <owl:Class rdf:about="#TomCruiseMovie">
+    <rdfs:subClassOf rdf:resource="#Movie"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tom cruise movie</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="AntonioBanderasMovie">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#JamesDeanMovie"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#TomCruiseMovie"/>
+    <owl:disjointWith rdf:resource="#JudiDenchMovie"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#JudyGarlandMovie"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf rdf:resource="#Movie"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Antonio banderas movie</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#JudyGarlandMovie">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#JamesDeanMovie"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#TomCruiseMovie"/>
+    <rdfs:subClassOf rdf:resource="#Movie"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Judy garland movie</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="JamesDeanFan">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="#MovieFan"/>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="#JamesDeanMovie"/>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#ownsMovie"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:intersectionOf>
+  </owl:Class>
+  <owl:Class rdf:ID="ThreeMovieOwner">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="#MovieFan"/>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#ownsMovie"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >3</owl:cardinality>
+      </owl:Restriction>
+    </owl:intersectionOf>
+  </owl:Class>
+  <owl:Class rdf:ID="JamesDeanObsessive">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="#MovieFan"/>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#ownsMovie"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="#JamesDeanMovie"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#ownsMovie"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >3</owl:cardinality>
+      </owl:Restriction>
+    </owl:intersectionOf>
+  </owl:Class>
+  <owl:Class rdf:about="#JamesDeanMovie">
+    <owl:oneOf rdf:parseType="Collection">
+      <JamesDeanMovie rdf:ID="EastOfEden">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >East of Eden</rdfs:label>
+      </JamesDeanMovie>
+      <JamesDeanMovie rdf:ID="Giant">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Giant</rdfs:label>
+      </JamesDeanMovie>
+      <JamesDeanMovie rdf:ID="Rebel">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Rebel Without a Cause</rdfs:label>
+      </JamesDeanMovie>
+    </owl:oneOf>
+    <owl:disjointWith rdf:resource="#TomCruiseMovie"/>
+    <owl:disjointWith rdf:resource="#JudiDenchMovie"/>
+    <owl:disjointWith rdf:resource="#SpikeLeeMovie"/>
+    <rdfs:subClassOf rdf:resource="#Movie"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="PaulsMovies"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="JamesDeanExclusive">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="#MovieFan"/>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#ownsMovie"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="#JamesDeanMovie"/>
+      </owl:Restriction>
+    </owl:intersectionOf>
+  </owl:Class>
+  <owl:Class rdf:ID="SevenMovieOwner">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#ownsMovie"/>
+        </owl:onProperty>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >7</owl:minCardinality>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="#Movie"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Seven movie owner</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#PaulsMovies">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="#Movie"/>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="ownedBy"/>
+        </owl:onProperty>
+        <owl:hasValue>
+          <rdf:Description rdf:ID="Paul">
+            <rdf:type>
+              <owl:Restriction>
+                <owl:someValuesFrom>
+                  <owl:Class>
+                    <owl:complementOf rdf:resource="#JamesDeanMovie"/>
+                  </owl:Class>
+                </owl:someValuesFrom>
+                <owl:onProperty>
+                  <owl:ObjectProperty rdf:about="#ownsMovie"/>
+                </owl:onProperty>
+              </owl:Restriction>
+            </rdf:type>
+            <rdf:type>
+              <owl:Restriction>
+                <owl:someValuesFrom rdf:resource="#JudyGarlandMovie"/>
+                <owl:onProperty>
+                  <owl:ObjectProperty rdf:about="#ownsMovie"/>
+                </owl:onProperty>
+              </owl:Restriction>
+            </rdf:type>
+            <rdf:type>
+              <owl:Restriction>
+                <owl:someValuesFrom rdf:resource="#JudiDenchMovie"/>
+                <owl:onProperty>
+                  <owl:ObjectProperty rdf:about="#ownsMovie"/>
+                </owl:onProperty>
+              </owl:Restriction>
+            </rdf:type>
+            <rdf:type>
+              <owl:Restriction>
+                <owl:someValuesFrom rdf:resource="#TomCruiseMovie"/>
+                <owl:onProperty>
+                  <owl:ObjectProperty rdf:about="#ownsMovie"/>
+                </owl:onProperty>
+              </owl:Restriction>
+            </rdf:type>
+            <rdf:type>
+              <owl:Restriction>
+                <owl:someValuesFrom rdf:resource="#AntonioBanderasMovie"/>
+                <owl:onProperty>
+                  <owl:ObjectProperty rdf:about="#ownsMovie"/>
+                </owl:onProperty>
+              </owl:Restriction>
+            </rdf:type>
+            <rdf:type rdf:resource="#MovieFan"/>
+          </rdf:Description>
+        </owl:hasValue>
+      </owl:Restriction>
+    </owl:intersectionOf>
+  </owl:Class>
+  <owl:Class rdf:ID="ManyMovieOwner">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#ownsMovie"/>
+        </owl:onProperty>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >4</owl:minCardinality>
+      </owl:Restriction>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="#ownsMovie">
+    <owl:inverseOf rdf:resource="#ownedBy"/>
+    <rdfs:range rdf:resource="#Movie"/>
+    <rdfs:domain rdf:resource="#MovieFan"/>
+  </owl:ObjectProperty>
+  <SpikeLeeMovie rdf:ID="DoTheRightThing"/>
+  <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#versionInfo"/>
+  <owl:AllDifferent>
+    <owl:distinctMembers rdf:parseType="Collection">
+      <JamesDeanMovie rdf:about="#EastOfEden"/>
+      <JamesDeanMovie rdf:about="#Giant"/>
+      <JamesDeanMovie rdf:about="#Rebel"/>
+    </owl:distinctMembers>
+  </owl:AllDifferent>
+  <JamesDeanMovie rdf:ID="RimbaudsMovie">
+    <owl:differentFrom rdf:resource="#EastOfEden"/>
+    <owl:differentFrom rdf:resource="#Giant"/>
+  </JamesDeanMovie>
+  <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#label"/>
+  <rdf:Description rdf:ID="Rocky">
+    <rdf:type>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="#JudyGarlandMovie"/>
+        <owl:onProperty rdf:resource="#ownsMovie"/>
+      </owl:Restriction>
+    </rdf:type>
+    <rdf:type rdf:resource="#JamesDeanExclusive"/>
+    <rdf:type rdf:resource="#ThreeMovieOwner"/>
+  </rdf:Description>
+</rdf:RDF>
+
+<!-- Created with TopBraid Composer -->

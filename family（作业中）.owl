@@ -1,0 +1,485 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.nudt.edu.cn/liubin0314/family#"
+     xml:base="http://www.nudt.edu.cn/liubin0314/family"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:family="http://www.nudt.edu.cn/liubin0314/family#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#">
+    <owl:Ontology rdf:about="http://www.nudt.edu.cn/liubin0314/family"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.nudt.edu.cn/liubin0314/family#couple -->
+
+    <owl:ObjectProperty rdf:about="http://www.nudt.edu.cn/liubin0314/family#couple">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.nudt.edu.cn/liubin0314/family#fatherOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.nudt.edu.cn/liubin0314/family#fatherOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.nudt.edu.cn/liubin0314/family#parentOf"/>
+        <rdfs:domain rdf:resource="http://www.nudt.edu.cn/liubin0314/family#男性"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.nudt.edu.cn/liubin0314/family#grandParentOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.nudt.edu.cn/liubin0314/family#grandParentOf"/>
+    
+
+
+    <!-- http://www.nudt.edu.cn/liubin0314/family#husbandOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.nudt.edu.cn/liubin0314/family#husbandOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.nudt.edu.cn/liubin0314/family#couple"/>
+        <rdfs:domain rdf:resource="http://www.nudt.edu.cn/liubin0314/family#男性"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.nudt.edu.cn/liubin0314/family#motherOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.nudt.edu.cn/liubin0314/family#motherOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.nudt.edu.cn/liubin0314/family#parentOf"/>
+        <rdfs:domain rdf:resource="http://www.nudt.edu.cn/liubin0314/family#女性"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.nudt.edu.cn/liubin0314/family#parentOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.nudt.edu.cn/liubin0314/family#parentOf">
+        <rdfs:domain rdf:resource="http://www.nudt.edu.cn/liubin0314/family#人"/>
+        <rdfs:range rdf:resource="http://www.nudt.edu.cn/liubin0314/family#人"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.nudt.edu.cn/liubin0314/family#sibling -->
+
+    <owl:ObjectProperty rdf:about="http://www.nudt.edu.cn/liubin0314/family#sibling">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.nudt.edu.cn/liubin0314/family#uncleOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.nudt.edu.cn/liubin0314/family#uncleOf"/>
+    
+
+
+    <!-- http://www.nudt.edu.cn/liubin0314/family#wifeOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.nudt.edu.cn/liubin0314/family#wifeOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.nudt.edu.cn/liubin0314/family#couple"/>
+        <rdfs:domain rdf:resource="http://www.nudt.edu.cn/liubin0314/family#女性"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.nudt.edu.cn/liubin0314/family#人 -->
+
+    <owl:Class rdf:about="http://www.nudt.edu.cn/liubin0314/family#人">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.nudt.edu.cn/liubin0314/family#女性"/>
+                    <rdf:Description rdf:about="http://www.nudt.edu.cn/liubin0314/family#男性"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.nudt.edu.cn/liubin0314/family#女性 -->
+
+    <owl:Class rdf:about="http://www.nudt.edu.cn/liubin0314/family#女性">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.nudt.edu.cn/liubin0314/family#couple"/>
+                <owl:someValuesFrom rdf:resource="http://www.nudt.edu.cn/liubin0314/family#男性"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.nudt.edu.cn/liubin0314/family#人"/>
+        <owl:disjointWith rdf:resource="http://www.nudt.edu.cn/liubin0314/family#男性"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.nudt.edu.cn/liubin0314/family#男性 -->
+
+    <owl:Class rdf:about="http://www.nudt.edu.cn/liubin0314/family#男性">
+        <rdfs:subClassOf rdf:resource="http://www.nudt.edu.cn/liubin0314/family#人"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.nudt.edu.cn/liubin0314/family#戴卫 -->
+
+    <owl:NamedIndividual rdf:about="http://www.nudt.edu.cn/liubin0314/family#戴卫">
+        <rdf:type rdf:resource="http://www.nudt.edu.cn/liubin0314/family#人"/>
+        <parentOf rdf:resource="http://www.nudt.edu.cn/liubin0314/family#戴珊"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.nudt.edu.cn/liubin0314/family#戴尔 -->
+
+    <owl:NamedIndividual rdf:about="http://www.nudt.edu.cn/liubin0314/family#戴尔">
+        <rdf:type rdf:resource="http://www.nudt.edu.cn/liubin0314/family#人"/>
+        <parentOf rdf:resource="http://www.nudt.edu.cn/liubin0314/family#戴卫"/>
+        <parentOf rdf:resource="http://www.nudt.edu.cn/liubin0314/family#李雷"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.nudt.edu.cn/liubin0314/family#戴珊 -->
+
+    <owl:NamedIndividual rdf:about="http://www.nudt.edu.cn/liubin0314/family#戴珊">
+        <rdf:type rdf:resource="http://www.nudt.edu.cn/liubin0314/family#人"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.nudt.edu.cn/liubin0314/family#李明 -->
+
+    <owl:NamedIndividual rdf:about="http://www.nudt.edu.cn/liubin0314/family#李明">
+        <rdf:type rdf:resource="http://www.nudt.edu.cn/liubin0314/family#人"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.nudt.edu.cn/liubin0314/family#李雷 -->
+
+    <owl:NamedIndividual rdf:about="http://www.nudt.edu.cn/liubin0314/family#李雷">
+        <fatherOf rdf:resource="http://www.nudt.edu.cn/liubin0314/family#李明"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.nudt.edu.cn/liubin0314/family#玛丽 -->
+
+    <owl:NamedIndividual rdf:about="http://www.nudt.edu.cn/liubin0314/family#玛丽">
+        <rdf:type rdf:resource="http://www.nudt.edu.cn/liubin0314/family#女性"/>
+        <couple rdf:resource="http://www.nudt.edu.cn/liubin0314/family#戴卫"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.nudt.edu.cn/liubin0314/family#韩梅 -->
+
+    <owl:NamedIndividual rdf:about="http://www.nudt.edu.cn/liubin0314/family#韩梅">
+        <rdf:type rdf:resource="http://www.nudt.edu.cn/liubin0314/family#男性"/>
+        <couple rdf:resource="http://www.nudt.edu.cn/liubin0314/family#李雷"/>
+        <parentOf rdf:resource="http://www.nudt.edu.cn/liubin0314/family#戴珊"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.nudt.edu.cn/liubin0314/family#戴卫"/>
+            <rdf:Description rdf:about="http://www.nudt.edu.cn/liubin0314/family#李雷"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.nudt.edu.cn/liubin0314/family#戴珊"/>
+            <rdf:Description rdf:about="http://www.nudt.edu.cn/liubin0314/family#李明"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.nudt.edu.cn/liubin0314/family#玛丽"/>
+            <rdf:Description rdf:about="http://www.nudt.edu.cn/liubin0314/family#韩梅"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="urn:swrl#A">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#B">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#C">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A couple B，B parentOf C，则A parentOf C</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">父辈关系的推导规则</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.nudt.edu.cn/liubin0314/family#couple"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#A"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#B"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.nudt.edu.cn/liubin0314/family#parentOf"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#B"/>
+                                <swrl:argument2 rdf:resource="urn:swrl#C"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.nudt.edu.cn/liubin0314/family#parentOf"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#A"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#C"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DifferentIndividualsAtom"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#B"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#C"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.nudt.edu.cn/liubin0314/family#grandParentOf"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#A"/>
+                                <swrl:argument2 rdf:resource="urn:swrl#B"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.nudt.edu.cn/liubin0314/family#grandParentOf"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl#A"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl#C"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.nudt.edu.cn/liubin0314/family#sibling"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#C"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#B"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.nudt.edu.cn/liubin0314/family#parentOf"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#A"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#B"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.nudt.edu.cn/liubin0314/family#parentOf"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#B"/>
+                                <swrl:argument2 rdf:resource="urn:swrl#C"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.nudt.edu.cn/liubin0314/family#grandParentOf"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#A"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#C"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.nudt.edu.cn/liubin0314/family#sibling"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#A"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#B"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.nudt.edu.cn/liubin0314/family#parentOf"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#B"/>
+                                <swrl:argument2 rdf:resource="urn:swrl#C"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.nudt.edu.cn/liubin0314/family#uncleOf"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#A"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#C"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+
