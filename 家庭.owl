@@ -1,0 +1,1017 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/liubin0314/ontologies/2019/3/untitled-ontology-8#"
+     xml:base="http://www.semanticweb.org/liubin0314/ontologies/2019/3/untitled-ontology-8"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:untitled-ontology-8="http://www.semanticweb.org/liubin0314/ontologies/2019/3/untitled-ontology-8#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:family="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#couple -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#couple">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#fatherOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#fatherOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#parentOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#Male"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#grandParentOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#grandParentOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#husbandOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#husbandOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#couple"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#wifeOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#Male"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#Female"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#motherOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#motherOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#parentOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#Female"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#parentOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#parentOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#sibling -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#sibling">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#uncleOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#uncleOf"/>
+    
+
+
+    <!-- http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#wifeOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#wifeOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#couple"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#Female"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#Male"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#age -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#age">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#Person"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</xsd:minExclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#birthDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#birthDate">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:label>出生年</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#nowYear -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#nowYear"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#Female -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#Female">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#Person"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#Male"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#Male -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#Male">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#Now -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#Now">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#Time"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#OldMan -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#OldMan">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#age"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#int">60</xsd:minExclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#Person -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#Person">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#Female"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#Male"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#Time -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#Time"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#daishan -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#daishan">
+        <rdfs:label>戴珊</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#daiwei -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#daiwei">
+        <family:parentOf rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#daishan"/>
+        <rdfs:label>戴卫</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#dell -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#dell">
+        <family:fatherOf rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#daiwei"/>
+        <family:fatherOf rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#lilei"/>
+        <rdfs:label>戴尔</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#hanmei -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#hanmei">
+        <family:couple rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#lilei"/>
+        <family:parentOf rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#daishan"/>
+        <rdfs:label>韩梅</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#li1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#li1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#Male"/>
+        <family:couple rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#zhangsun"/>
+        <family:parentOf rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#li2"/>
+        <family:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#int">598</family:birthDate>
+        <rdfs:label>李世民</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#li2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#li2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#Male"/>
+        <family:couple rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#wuzetian"/>
+        <family:parentOf rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#li3"/>
+        <family:parentOf rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#li6"/>
+        <rdfs:label>李治</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#li3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#li3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#Male"/>
+        <family:parentOf rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#li4"/>
+        <rdfs:label>李旦</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#li4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#li4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#Male"/>
+        <rdfs:label>李隆基</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#li6 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#li6">
+        <rdf:type rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#Male"/>
+        <family:couple rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#weihuanghou"/>
+        <rdfs:label>李显</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#lilei -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#lilei">
+        <family:fatherOf rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#liming"/>
+        <rdfs:label>李雷</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#liming -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#liming">
+        <rdfs:label>李明</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#mali -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#mali">
+        <rdf:type rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#Female"/>
+        <family:couple rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#daiwei"/>
+        <rdfs:label>玛丽</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#nowTime -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#nowTime">
+        <rdf:type rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#Now"/>
+        <family:nowYear rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2019</family:nowYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#test -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#test">
+        <rdf:type rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#Person"/>
+        <family:fatherOf rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#daiwei"/>
+        <family:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1969</family:birthDate>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#weihuanghou -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#weihuanghou">
+        <rdf:type rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#Female"/>
+        <rdfs:label>韦后</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#wuzetian -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#wuzetian">
+        <rdf:type rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#Female"/>
+        <family:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#int">624</family:birthDate>
+        <rdfs:label>武则天</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#yangyuhuan -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#yangyuhuan">
+        <rdf:type rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#Female"/>
+        <family:couple rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#li4"/>
+        <rdfs:label>杨玉环</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#zhangsun -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#zhangsun">
+        <rdf:type rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#Female"/>
+        <rdfs:label>长孙皇后</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#daishan"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#liming"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#daiwei"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#lilei"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#hanmei"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#mali"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#li3"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#li6"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="urn:swrl#A">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#B">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#M">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#Z">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#T">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#nowyear">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#age">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#year">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#p">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#C">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#X">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#Y">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#parentOf"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#X"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#Y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#parentOf"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#Y"/>
+                                <swrl:argument2 rdf:resource="urn:swrl#Z"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#grandParentOf"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#X"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#Z"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#Female"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#A"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#couple"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#A"/>
+                                <swrl:argument2 rdf:resource="urn:swrl#B"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#wifeOf"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#A"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#B"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#parentOf"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#M"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#Z"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#Female"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#M"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#motherOf"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#M"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#Z"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#Male"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#A"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#couple"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#A"/>
+                                <swrl:argument2 rdf:resource="urn:swrl#B"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#husbandOf"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#A"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#B"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#parentOf"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#M"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#Z"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#Male"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#M"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#fatherOf"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#M"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#Z"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#Now"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#T"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#nowYear"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#T"/>
+                                <swrl:argument2 rdf:resource="urn:swrl#nowyear"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#subtract"/>
+                                        <swrl:arguments rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="urn:swrl#age"/>
+                                            <rdf:Description rdf:about="urn:swrl#nowyear"/>
+                                            <rdf:Description rdf:about="urn:swrl#year"/>
+                                        </swrl:arguments>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#Person"/>
+                                                <swrl:argument1 rdf:resource="urn:swrl#p"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#birthDate"/>
+                                                        <swrl:argument1 rdf:resource="urn:swrl#p"/>
+                                                        <swrl:argument2 rdf:resource="urn:swrl#year"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#age"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#p"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#age"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#parentOf"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#A"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#B"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#couple"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#A"/>
+                                <swrl:argument2 rdf:resource="urn:swrl#C"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#parentOf"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#C"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#B"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#grandParentOf"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#X"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#Y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#grandParentOf"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#X"/>
+                                <swrl:argument2 rdf:resource="urn:swrl#Z"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DifferentIndividualsAtom"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl#Y"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl#Z"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#sibling"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#Y"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#Z"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#sibling"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#A"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#B"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#parentOf"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#B"/>
+                                <swrl:argument2 rdf:resource="urn:swrl#C"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#uncleOf"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#A"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#C"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#parentOf"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#X"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#Y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#parentOf"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#X"/>
+                                <swrl:argument2 rdf:resource="urn:swrl#Z"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DifferentIndividualsAtom"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl#Y"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl#Z"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/liubin0314/ontologies/2019/3/family#sibling"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#Y"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#Z"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+
